@@ -1,34 +1,4 @@
-"use strict"
-
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
-
-    return html;
-}
-
-function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
-    }
-    return html;
-}
-
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
+"use strict";
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -48,10 +18,41 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+var roastSelection = '';
 
-tbody.innerHTML = renderCoffees(coffees);
+function filteredList(roast){
 
-submitButton.addEventListener('click', updateCoffees);
+
+     roastSelection = roast.value;
+     return roastSelection;
+}
+
+
+function renderCoffees(coffees) {
+    var coffee = '';
+    for (var i = 0; i < coffees.length; i++) {
+        coffee += displayCoffee(coffees[i])
+    }
+    return(coffee);
+}
+
+var listOfCoffees = document.querySelector('li');
+
+function displayCoffee(coffee) {
+    var html = '';
+    html += '<li>';
+    html += coffee.name;
+    html += '/';
+    html += coffee.roast;
+    html += '</li>';
+    listOfCoffees.innerHTML = html;
+}
+
+console.log(renderCoffees(coffees));
+
+//Should be an event listener
+var roastFiltered = document.querySelector("#add-roast-selection");
+// roastFiltered.innerText = filteredList(coffees.roast);
+
+var listOfCoffees = document.querySelector('li');
+
