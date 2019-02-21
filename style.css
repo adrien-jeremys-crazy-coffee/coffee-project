@@ -12,6 +12,10 @@ h1 {
 
 }
 
+h2{
+    text-align:center;
+}
+
 hr{
 
     display: block;
@@ -20,6 +24,11 @@ hr{
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+}
+
+.coffee{
+
+    font-size:20px;
 }
 
 .container-selection{
@@ -47,21 +56,25 @@ select{
     width: 100%;
 }
 
+#name{
+    width:100%;
+}
+
 
 
 .button {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: blue;
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    padding: 20px;
+    /*padding: 20px;*/
     width: 100%;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
+    margin-bottom:5%;
 }
 
 .button span {
@@ -85,6 +98,46 @@ select{
 }
 
 .button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: blue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    /*padding: 20px;*/
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top:5%;
+}
+
+.button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button2:hover span {
+    padding-right: 25px;
+}
+
+.button2:hover span:after {
     opacity: 1;
     right: 0;
 }
