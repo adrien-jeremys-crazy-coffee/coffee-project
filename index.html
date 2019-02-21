@@ -2,51 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Adrien and Jeremy's World Famous Crazy Sloppy Coffee Form!</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <h1>Adrien and Jeremy's Crazy Coffee!</h1>
 
-    <!--Gives user the option to search for coffee already in database-->
+<div class = "container">
+    <h1>Adrien and Jeremy's World Famous Crazy Sloppy Coffee Form!</h1>
+    <hr/>
+</div>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option id="selection-all">all</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <label for="coffee-name"></label>
-        <input type="text" id="coffee-name">
-        <input id="submit" type="submit" />
-    </form>
 
-    <!--Gives user the option to add a coffee-->
+<div class = "container-coffee">
 
-    <h3>Add A Coffee</h3>
-
-    <form>
-        <label for="add-roast-selection"></label>
-        <select id="add-roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <label for="add-coffee-name"></label>
-        <input type="text" id="add-coffee-name">
-        <input id="add-submit" type="submit" />
-    </form>
-
-<div class="text-container">
-    <!--<p class="list"></p>-->
-    <ul class = "ul">
-        <li>test</li>
-    </ul>
+    <div class="row">
+        <div class="col">NAME</div>
+        <div class="col">ROAST</div>
+    </div>
 
 </div>
 
-    <script src="main.js"></script>
+<div class = "container-selection">
+    <h5>Roast</h5>
+    <form>
+        <label for="roast-selection"></label>
+        <select id="roast-selection">
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+    </form>
+    <button class="button" style="vertical-align:middle"><span>Hover </span></button>
+
+    <h5>Coffee Name</h5>
+    <form>
+        <label for="coffee-name"></label>
+        <input id="coffee-name" name="coffee-name" type="text">
+        <!--<input id="submit" type="submit" />-->
+    </form>
+
+</div>
+
+
+
+
+
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
