@@ -1,19 +1,23 @@
 "use strict"
 
 
-//
+//if or else in html for even or odd for render Coffees.
 
 function renderCoffee(coffee) {
+
     var html = '<div id="coffee">';
     html += '<a>' + '<span>' + '<span id =coffeeName>' + coffee.name + '</span>' + " " +  '<span id =coffeeRoast>' + coffee.roast + '</span>' + '</span>' + '</a>';
     html += '</div>';
+
 
     return html;
 }
 
 function renderCoffees(coffees) {
     var html = '';
-    for (var i = coffees.length - 1; i >= 0; i--) {
+    for (var i = 0 ; i < coffees.length; i++) {
+
+
         html += renderCoffee(coffees[i]);
 
     }
@@ -35,6 +39,13 @@ function updateCoffees(roastSelection) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function pushCoffee(coffeeNameSubmission){
+
+    coffeeNameSubmission = document.getElementById("name-coffee");
+    console.log(coffeeNameSubmission);
+
 }
 
 function keyWordSearch() {
@@ -70,25 +81,9 @@ function keyWordSearch() {
 
     }
 
-    // coffeeList = coffees;
-    // console.log(coffeeList.length);
-    // for(var i = 0; i < coffeeList.length; i++){
-    //
-    //     //a Prints individual elements
-    //     a = coffeeList[i].name;
-    //     console.log(a);
-    //     txtValue = a.textContent || a.innerText;
-    //     console.log(txtValue);
-    // }
-    //
-    // if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    //     a.style.display = "";
-    // } else {
-    //     a.style.display = "none";
-    // }
-
-
 }
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -109,9 +104,11 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('.row');
-// var roastSelection = document.querySelector('#roast-selection');
-
-
 tbody.innerHTML = renderCoffees(coffees);
+var submitButton = document.querySelector('#button-submission');
 
-// roastSelection.addEventListener('click', updateCoffees);
+
+
+//push to updated coffee list
+submitButton.addEventListener('click', pushCoffee);
+

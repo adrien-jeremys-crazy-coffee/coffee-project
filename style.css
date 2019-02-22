@@ -29,18 +29,24 @@ hr{
 
 #coffeeName{
 
-    font-size:18px;
+    font-size:30px;
 }
 
 #coffeeRoast{
 
-    font-size:12px;
+    font-size:18px;
 }
 
-#coffee a{
+#coffee{
 
-    width:50%;
-    float:left;
+    margin-right: 50%;
+
+
+}
+
+#odd{
+    margin-left:50%;
+
 }
 
 .container{
@@ -74,7 +80,7 @@ select{
     width: 100%;
 }
 
-#name{
+#name-coffee{
     width:100%;
 }
 
