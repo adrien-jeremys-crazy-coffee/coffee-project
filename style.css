@@ -27,14 +27,27 @@ hr{
     padding: 0;
 }
 
-row {
-    /*margin-right: 0px;*/
-    /*margin-left: 0px;*/
-}
-.coffee{
+#coffeeName{
 
-    font-size:20px;
+    font-size:18px;
 }
+
+#coffeeRoast{
+
+    font-size:12px;
+}
+
+#coffee a{
+
+    width:50%;
+    float:left;
+}
+
+.container{
+    padding-right: 0;
+    padding-left: 0;
+}
+
 
 .container-selection{
 
@@ -65,6 +78,12 @@ select{
     width:100%;
 }
 
+.row{
+
+    width:100%;
+    margin-right:0;
+    margin-left:0;
+}
 
 
 .button {
