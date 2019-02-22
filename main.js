@@ -47,9 +47,16 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('.row');
-var submitButton = document.querySelector('#submit');
+// var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
 // submitButton.addEventListener('click', updateCoffees);
+
+function recordRoastSelection(roastId){
+
+
+    var roastSubmission = document.querySelector(roastId)
+}
+

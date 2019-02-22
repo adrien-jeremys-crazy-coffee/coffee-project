@@ -30,20 +30,20 @@
     <h5>Roast</h5>
     <form>
         <label for="roast-selection"></label>
-        <select id="roast-selection">
+        <select onchange="updateCoffees(event)" id="roast-selection">
             <option>all</option>
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
     </form>
-    <!--<button class="button" style="vertical-align:middle"><span>Submit</span></button>-->
+
 
     <h5>Coffee Name</h5>
     <form>
         <label for="coffee-name"></label>
-        <input id="coffee-name" name="coffee-name" type="text">
-        <!--<input id="submit" type="submit" />-->
+        <input onkeyup="keyWordSearch()" id="coffee-name" name="coffee-name" type="text">
+
     </form>
     <button class="button2" style="vertical-align:middle"><span>Submit</span></button>
 
@@ -76,7 +76,103 @@
 
 
 
-<script src="main.js"></script>
+<!--<script src="main.js"></script>-->
+
+
+<script>
+
+
+    "use strict"
+
+    function renderCoffee(coffee) {
+        var html = '<div class="coffee">';
+        html += '<div>' + coffee.name  + " " + coffee.roast + '</div>';
+        html += '</div>';
+
+        return html;
+    }
+
+    function renderCoffees(coffees) {
+        var html = '';
+        for(var i = coffees.length - 1; i >= 0; i--) {
+            html += renderCoffee(coffees[i]);
+
+        }
+
+        return html;
+    }
+
+    function updateCoffees(roastSelection) {
+        roastSelection.preventDefault(); // don't submit the form, we just want to update the data
+
+        var selectedRoast = roastSelection.target.value;
+        console.log(selectedRoast);
+        var filteredCoffees = [];
+        coffees.forEach(function(coffee) {
+            if(selectedRoast === 'all'){
+                filteredCoffees.push(coffee)
+            }else if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
+
+    function keyWordSearch(){
+
+        var input, filter, coffeeList, txtValue, a ;
+        input = document.getElementById("coffee-name");
+        filter = input.value.toUpperCase();
+        coffeeList = coffees;
+        for(var i = 0; i < coffeeList.length; i++){
+
+            a = coffeeList[i];
+            console.log(a);
+            txtValue = a.textContent || a.innerText;
+        }
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a.style.display = "";
+        } else {
+            a.style.display = "none";
+        }
+
+
+    }
+
+    // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+
+    var tbody = document.querySelector('.row');
+    // var roastSelection = document.querySelector('#roast-selection');
+
+
+    tbody.innerHTML = renderCoffees(coffees);
+
+    // roastSelection.addEventListener('click', updateCoffees);
+
+
+
+
+
+
+
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
