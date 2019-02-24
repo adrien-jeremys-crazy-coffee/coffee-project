@@ -3,6 +3,8 @@
 
 //if or else in html for even or odd for render Coffees.
 
+
+
 function renderCoffee(coffee) {
 
     var html = '<div id="coffee">';
@@ -13,9 +15,11 @@ function renderCoffee(coffee) {
     return html;
 }
 
+//First function called
+//Loops through the array of coffees
 function renderCoffees(coffees) {
     var html = '';
-    for (var i = 0 ; i < coffees.length; i++) {
+    for (var i = coffees.length - 1 ; i >= 0; i--) {
 
 
         html += renderCoffee(coffees[i]);
@@ -25,6 +29,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+//Base Function
 function updateCoffees(roastSelection) {
     roastSelection.preventDefault(); // don't submit the form, we just want to update the data
 
@@ -41,13 +46,38 @@ function updateCoffees(roastSelection) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-function pushCoffee(coffeeNameSubmission){
+function pushCoffee(){
 
-    coffeeNameSubmission = document.getElementById("name-coffee");
-    console.log(coffeeNameSubmission);
+
+    //The coffeeName I want to push
+    var coffeeName = document.getElementById("name-coffee").value;
+    console.log(coffeeName);
+    console.log(typeof coffeeName);
+
+
+
+    //Roast Selection of the Second Menu Option
+    var roastSelection2 = document.getElementById("roast-selection2").value;
+    console.log(roastSelection2);
+
+
+    var coffeePushed = {
+    id: 15,
+    name: coffeeName,
+    roast: roastSelection2
+    };
+
+
+
+    coffees.push(coffeePushed);
+    console.log(coffees);
+
+
+    tbody.innerHTML = renderCoffees(coffees);
 
 }
 
+//Keyword filter search
 function keyWordSearch() {
 
     var input, filter, coffeesDisplayedDiv, txtValue, coffeeName;
@@ -84,8 +114,8 @@ function keyWordSearch() {
 }
 
 
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+//Step 0
+//Array of coffees
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -103,8 +133,17 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+//tbdoy declaration returns the first element in the document corresponding to row.
 var tbody = document.querySelector('.row');
+
+//Returns these rendered coffees to the HTML Document
+//RenderCoffees is the first function called
 tbody.innerHTML = renderCoffees(coffees);
+
+
+//<------------------Second half of the coffee form------------------------------------->>
+
+//Button submissionn return first element in the document corresponding to button submission
 var submitButton = document.querySelector('#button-submission');
 
 
