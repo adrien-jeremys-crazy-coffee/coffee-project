@@ -2,84 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title>Adrien and Jeremy's World Famous Crazy Sloppy Coffee Form!</title>
     <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
 
-<div class = "container">
+</head>
+<body src="img/beans-brown-coffee-34085.png">
+
+<div class="container">
     <h1>Adrien and Jeremy's World Famous Crazy Sloppy Coffee Form!</h1>
     <hr/>
 </div>
 
 
-<div class = "container-coffee">
+<div class="container">
 
-    <div class="row">
-        <div class="col-3">NAME</div>
-        <div class="col">ROAST</div>
+    <div class="container-coffee">
+
+        <div class="row">
+
+            <div class="col">NAME</div>
+            <div class="col">ROAST</div>
+
+        </div>
+
     </div>
 
+    <div class="container-selection">
+        <h4>Roast</h4>
+        <form>
+            <label for="roast-selection"></label>
+            <select onchange="updateCoffees(event)" id="roast-selection">
+                <option>all</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+        </form>
+
+
+        <h4>Coffee Name</h4>
+        <form>
+            <label for="coffee-name"></label>
+            <input onkeyup="keyWordSearch()" id="coffee-name" name="coffee-name" type="text">
+
+        </form>
+        <button id="coffee-submission" class="button2" style="vertical-align:middle"><span>Submit</span></button>
+
+        <hr/>
+
+
+        <h2>Add a coffee</h2>
+        <h4>Roast</h4>
+        <form>
+            <label for="roast-selection2"></label>
+            <select id="roast-selection2">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+        </form>
+        <!--<button class="button" style="vertical-align:middle"><span>Submit</span></button>-->
+
+        <h4>Name</h4>
+        <form>
+            <label for="name-coffee"></label>
+            <input id="name-coffee" name="name-coffee" type="text">
+            <!--<input id="submit" type="submit" />-->
+        </form>
+        <button id="button-submission" class="button2" type="submit" style="vertical-align:middle"><span>Submit</span>
+        </button>
+
+    </div>
+
+
 </div>
 
-<div class = "container-selection">
-    <h5>Roast</h5>
-    <form>
-        <label for="roast-selection"></label>
-        <select onchange="updateCoffees(event)" id="roast-selection">
-            <option>all</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-    </form>
-
-
-    <h5>Coffee Name</h5>
-    <form>
-        <label for="coffee-name"></label>
-        <input onkeyup="keyWordSearch()" id="coffee-name" name="coffee-name" type="text">
-
-    </form>
-    <button id = "coffee-submission" class="button2" style="vertical-align:middle"><span>Submit</span></button>
-
-    <hr/>
-
-
-    <h2>Add a coffee</h2>
-    <h5>Roast</h5>
-    <form>
-        <label for="roast-selection2"></label>
-        <select id="roast-selection2">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-    </form>
-    <!--<button class="button" style="vertical-align:middle"><span>Submit</span></button>-->
-
-    <h5>Name</h5>
-    <form>
-        <label for="name-coffee"></label>
-        <input id="name-coffee" name="name-coffee" type="text">
-        <!--<input id="submit" type="submit" />-->
-    </form>
-    <button id = "button-submission" class="button2" type = "submit" style="vertical-align:middle"><span>Submit</span></button>
-
-</div>
 
 
 <script src="main.js"></script>
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
 </html>

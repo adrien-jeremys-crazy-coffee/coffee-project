@@ -3,12 +3,16 @@
 
 //if or else in html for even or odd for render Coffees.
 
+//Two separate Divs. for loop through divs.
+
 
 
 function renderCoffee(coffee) {
 
+
+
     var html = '<div id="coffee">';
-    html += '<a>' + '<span>' + '<span id =coffeeName>' + coffee.name + '</span>' + " " +  '<span id =coffeeRoast>' + coffee.roast + '</span>' + '</span>' + '</a>';
+    html += '<a id = coffee1>' + '<span>' + '<span id =coffeeName>' + coffee.name + '</span>' + " " +  '<span id =coffeeRoast>' + coffee.roast + '</span>'  + '</span>' + '</a>';
     html += '</div>';
 
 
@@ -20,6 +24,7 @@ function renderCoffee(coffee) {
 function renderCoffees(coffees) {
     var html = '';
     for (var i = coffees.length - 1 ; i >= 0; i--) {
+
 
 
         html += renderCoffee(coffees[i]);
